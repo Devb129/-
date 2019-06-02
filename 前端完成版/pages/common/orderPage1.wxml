@@ -1,0 +1,71 @@
+<template name="orderPage1">
+ <view class ="buju">
+  <scroll-view class="orderPage-sideBar" bindscrolltolower="lower" scroll-y="true">
+    <block wx:for="{{menu1}}" wx:key="" wx:for-index="idx">
+      <view class="menuList">
+        <view class="menu {{index==selected?'selected':''}}" data-index="{{idx}}" catchtap="turnMenu">{{item.typename}}</view>
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view class="foodList" scroll-y="true">
+    <view class="food">
+      <image class="img" src="{{menu1[selected].menucontent1.src}}"></image>
+      <view class="food-info">
+        <view class="name">{{menu1[selected].menucontent1.name}}</view>
+        <view class="sales">月售 {{menu1[selected].menucontent1.sales}}
+        </view>
+        <view class="price">￥ {{menu1[selected].menucontent1.price}}</view>
+      </view>
+      <view class="food-numb">
+        <view class="remove" bindtap="removeFromTrolley" data-index="1" 
+        hidden="{{menu1[selected].menucontent1.numb==0}}">-</view>
+        <text class="text" hidden="{{menu1[selected].menucontent1.numb==0}}">{{menu1[selected].menucontent1.numb}}</text>
+        <view class="add" bindtap="addToTrolley" data-index="1">+</view>
+      </view>
+    </view>
+    <view class="food">
+      <image class="img" src="{{menu1[selected].menucontent2.src}}"></image>
+      <view class="food-info">
+        <view class="name">{{menu1[selected].menucontent2.name}}</view>
+        <view class="sales">月售 {{menu1[selected].menucontent2.sales}}
+        </view>
+        <view class="price">￥ {{menu1[selected].menucontent2.price}}</view>
+      </view>
+      <view class="food-numb">
+        <view class="remove" bindtap="removeFromTrolley" data-index="2" 
+        hidden="{{menu1[selected].menucontent2.numb==0}}">-</view>
+        <text class="text" hidden="{{menu1[selected].menucontent2.numb==0}}">{{menu1[selected].menucontent2.numb}}</text>
+        <view class="add" bindtap="addToTrolley" data-index="2">+</view>
+      </view>
+    </view>
+    <view class="food">
+      <image class="img" src="{{menu1[selected].menucontent3.src}}"></image>
+      <view class="food-info">
+        <view class="name">{{menu1[selected].menucontent3.name}}</view>
+        <view class="sales">月售 {{menu1[selected].menucontent3.sales}}
+        </view>
+        <view class="price">￥ {{menu1[selected].menucontent3.price}}</view>
+      </view>
+      <view class="food-numb">
+        <view class="remove" bindtap="removeFromTrolley" data-index="3" 
+        hidden="{{menu1[selected].menucontent3.numb==0}}">-</view>
+        <text class="text" hidden="{{menu1[selected].menucontent3.numb==0}}">{{menu1[selected].menucontent3.numb}}</text>
+        <view class="add" bindtap="addToTrolley" data-index="3">+</view>
+      </view>
+    </view>
+
+
+    </scroll-view>
+    <view class="footer {{cost!=0?'active':''}}">
+      <view class="howMuch">
+        <view class="img" style="background:{{cost!=0?'#FFD161':'#E7E7E7'}};">
+          <image src="/pages/images/trolley.png" style="width:60rpx;height:60rpx;"></image>
+        </view>
+        <view class="cost" hidden="{{cost==0}}">￥{{cost}}</view>
+       
+      </view>
+      <navigator url="/pages/bill/bill">
+      <view class="pay" bindtap="pay">{{cost!=0?'去结算':''}}</view> </navigator>     
+    </view>
+ </view>
+</template>
