@@ -1,0 +1,11 @@
+<view class="container">
+</view>
+  <view class="header">
+    <open-data type="userAvatarUrl"class="userImg"mode="cover"></open-data>
+   <open-data type="userNickName"class="userName"></open-data>
+  </view>
+  <view class="content">
+    <view class="mbill" bindtap="sss">每月账单</view>
+    <view class="signOut">退出账号</view>
+  </view>
+

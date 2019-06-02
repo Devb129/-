@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/menu/menu",
+    "pages/my/my",
+    "pages/order/order",
+    "pages/bill/bill"
+  ],
+  "window": {
+    "navigationBarTitleText": "北邮校园点餐",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#FFC640"
+  },
+  "tabBar": {
+    "color": "#272636",
+    "selectedColor": "#FFD161",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/menu/menu",
+        "iconPath": "pages/images/menu.png",
+        "selectedIconPath": "pages/images/menu-selected.png",
+        "color": "white",
+        "text": "菜单"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "pages/images/order.png",
+        "selectedIconPath": "pages/images/order-selected.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "pages/images/my.png",
+        "selectedIconPath": "pages/images/my-selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
